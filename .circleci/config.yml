@@ -9,9 +9,6 @@ jobs:
         password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
-      - run:
-          name: Install dependencies and build project
-          command: yarn install
       - sonarcloud/scan
 
 orbs:
