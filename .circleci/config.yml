@@ -3,10 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/base:2021.04
-      auth:
-        ussername: mydockerhub-user
-        password: $DOCKERHUB_PASSWORD
+      - image: node:latest
     steps:
       - checkout
       - sonarcloud/scan
