@@ -17,10 +17,25 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+  build:
+    docker:
+      - image: '********** CHANGE ME 1 **********'
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies and build project
+          command: '********** CHANGE ME 2 **********'
+      - sonarcloud/scan
+
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.3
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   say-hello-workflow:
-    jobs:
-      - say-hello
+    main:
+      jobs:
+        - say-hello
+        - build:
+            context: SonarCloud
