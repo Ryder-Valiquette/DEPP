@@ -3,13 +3,8 @@ import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 
 import {
     BrowserRouter as Router,
-    Routes,
-    Route,
     Link
   } from "react-router-dom";
-import About from './About';
-import Education from './Education';
-import Home from './Home';
 
 export default class NavbarComp extends Component {
   render() {
@@ -20,9 +15,24 @@ export default class NavbarComp extends Component {
         <Container>
           <Navbar.Brand href="#home">AirHQ</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link as={Link} to={"/home"}>Home</Nav.Link>
-            <Nav.Link as={Link} to={"/education"}>Educational Resources</Nav.Link>
-            <Nav.Link as={Link} to={"/about"}>About Us</Nav.Link>
+            <Nav.Link>
+                {' '}
+                <Link className="text-decoration-none text-black" to="/home">
+                Home
+                </Link>
+            </Nav.Link>
+            <Nav.Link>
+                {' '}
+                <Link className="text-decoration-none text-black" to="/education">
+                Educational Resources
+                </Link>
+            </Nav.Link>
+            <Nav.Link>
+                {' '}
+                <Link className="text-decoration-none text-black" to="/about">
+                About Us
+                </Link>
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
