@@ -25,7 +25,7 @@ function App() {
           <BreadcrumbItem>Test2</BreadcrumbItem>
           <BreadcrumbItem>Test3</BreadcrumbItem>
         </Breadcrumb>
-        <Alert variant="success">only dummies can read this</Alert>
+        <Alert variant="success">get a load of this cat</Alert>
         <Button>Test</Button> 
       </header>
     </div>
