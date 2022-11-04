@@ -16,12 +16,6 @@ export default class NavbarComp extends Component {
             AirHQ
           </Navbar.Brand>
           <Nav className="ms-auto">
-            {/* <Nav.Link>
-                {' '}
-                <Link href="/" className="text-decoration-none text-black">
-                Home
-                </Link>
-            </Nav.Link> */}
             <Nav.Link>
                 {' '}
                 <Link href="#education" className="text-decoration-none text-black" to="/education">
