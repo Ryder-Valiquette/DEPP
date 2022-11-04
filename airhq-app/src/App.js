@@ -1,4 +1,3 @@
-import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 
 import {
@@ -11,19 +10,20 @@ import NavbarComp from './components/NavbarComp';
 import About from './components/About';
 import Education from './components/Education';
 import Home from './components/Home';
+import { Container } from "react-bootstrap";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <NavbarComp/>
-      <BrowserRouter>
+        <Container>
         <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/education" element={<Education />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/education" element={<Education />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+        </Container>
+    </>
   );
 }
 

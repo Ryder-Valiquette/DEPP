@@ -9,27 +9,26 @@ import {
 export default class NavbarComp extends Component {
   render() {
     return (
-        <Router>
       <div>
         <Navbar bg="transparent">
         <Container>
-          <Navbar.Brand href="#home">AirHQ</Navbar.Brand>
-          <Nav className="me-auto">
+          <Navbar.Brand>AirHQ</Navbar.Brand>
+          <Nav className="ms-auto">
             <Nav.Link>
                 {' '}
-                <Link className="text-decoration-none text-black" to="/home">
+                <Link href="#home" className="text-decoration-none text-black" to="/home">
                 Home
                 </Link>
             </Nav.Link>
             <Nav.Link>
                 {' '}
-                <Link className="text-decoration-none text-black" to="/education">
+                <Link href="#education" className="text-decoration-none text-black" to="/education">
                 Educational Resources
                 </Link>
             </Nav.Link>
             <Nav.Link>
                 {' '}
-                <Link className="text-decoration-none text-black" to="/about">
+                <Link href="#about" className="text-decoration-none text-black" to="/about">
                 About Us
                 </Link>
             </Nav.Link>
@@ -38,7 +37,6 @@ export default class NavbarComp extends Component {
       </Navbar>
       <br />
       </div>
-      </Router>
     )
   }
 }
