@@ -12,14 +12,16 @@ export default class NavbarComp extends Component {
       <div>
         <Navbar bg="transparent">
         <Container>
-          <Navbar.Brand>AirHQ</Navbar.Brand>
+          <Navbar.Brand href="/">
+            AirHQ
+          </Navbar.Brand>
           <Nav className="ms-auto">
-            <Nav.Link>
+            {/* <Nav.Link>
                 {' '}
-                <Link href="#home" className="text-decoration-none text-black" to="/home">
+                <Link href="/" className="text-decoration-none text-black">
                 Home
                 </Link>
-            </Nav.Link>
+            </Nav.Link> */}
             <Nav.Link>
                 {' '}
                 <Link href="#education" className="text-decoration-none text-black" to="/education">
