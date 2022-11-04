@@ -1,3 +1,5 @@
+/* Where we will put our names */
+
 import React, { Component } from 'react'
 
 export default class About extends Component {
