@@ -14,6 +14,21 @@ export default class Home extends Component {
     return (
       <div>
         <h1>Home Page</h1>
+        <image>
+          
+        </image>
+
+        <h2>Search</h2>
+        
+
+        <h2>Major City AQI</h2>
+
+
+        <h2>Pollutant Chart</h2>
+
+
+        <h2>EPA color chart</h2>
+          <img src="https://cms.iqair.com/sites/default/files/inline-images/10-1.jpeg" alt="Air Quality Index" height="500" width="700" />
       </div>
     )
   }
