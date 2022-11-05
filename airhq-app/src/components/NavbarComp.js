@@ -1,5 +1,7 @@
+import "../components/NavbarComp.css";
 import React, { Component } from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
+import GoogleLoginComp from "./GoogleLoginComp.js";
 
 import {
     BrowserRouter as Router,
@@ -10,9 +12,11 @@ export default class NavbarComp extends Component {
   render() {
     return (
       <div>
-        <Navbar bg="transparent">
+        <Navbar bg="myColor">
         <Container>
+          
           <Navbar.Brand href="/">
+            <img src={"favicon.ico"} width="50" />
             AirHQ
           </Navbar.Brand>
           <Nav className="ms-auto">
@@ -28,6 +32,7 @@ export default class NavbarComp extends Component {
                 About Us
                 </Link>
             </Nav.Link>
+            <GoogleLoginComp />
           </Nav>
         </Container>
       </Navbar>
