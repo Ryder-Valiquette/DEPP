@@ -3,7 +3,8 @@ const SearchBar = () => (
         style={{ 
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            paddingTop: '15px'
         }}
     >
     <form action="/" method="get">
@@ -14,7 +15,7 @@ const SearchBar = () => (
             type="text"
             id="header-search"
             placeholder="City, State or Zip"
-            name="s" 
+            name="s"
         />
         <button type="submit">Search</button>
     </form>

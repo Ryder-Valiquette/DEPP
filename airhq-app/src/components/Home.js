@@ -10,27 +10,25 @@ import React, { Component } from 'react';
 // import { Button, Alert, Breadcrumb, BreadcrumbItem, Card, Nav, Navbar, Container } from "react-bootstrap"
 import SearchBar from './Search';
 import "./Home.css";
-
-
-
+import Chart from "../assets/EPAchart.png";
 
 export default class Home extends Component {
   render() {
     return (
-      <div>
+      <div className='hp'>
         <h1>Home Page</h1>
 
         <SearchBar />
         
 
-        <h2>Major City AQI</h2>
+        <h2>[Major City AQI left-hand side]</h2>
 
 
         <h2>Pollutant Chart</h2>
 
 
         <h2>EPA color chart</h2>
-          <img src="https://cms.iqair.com/sites/default/files/inline-images/10-1.jpeg" alt="Air Quality Index" height="500" width="700" />
+          <img src={Chart} alt="Air Quality Index" height="400" width="330" />
       </div>
     )
   }
