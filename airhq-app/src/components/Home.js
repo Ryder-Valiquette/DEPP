@@ -6,9 +6,10 @@
     EPA color chart
 */
 
-import React, { Component } from 'react'
-import { Button, Alert, Breadcrumb, BreadcrumbItem, Card, Nav, Navbar, Container } from "react-bootstrap"
-import SearchBar from './Search'
+import React, { Component } from 'react';
+// import { Button, Alert, Breadcrumb, BreadcrumbItem, Card, Nav, Navbar, Container } from "react-bootstrap"
+import SearchBar from './Search';
+import "./Home.css";
 
 
 
@@ -19,7 +20,7 @@ export default class Home extends Component {
       <div>
         <h1>Home Page</h1>
 
-        <SearchBar/>
+        <SearchBar />
         
 
         <h2>Major City AQI</h2>

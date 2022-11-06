@@ -65,6 +65,7 @@ class GoogleLoginComp extends Component {
               onFailure={this.responseGoogleError}
               isSignedIn={true}
               cookiePolicy={"single_host_origin"}
+              style = {{ alignItems: "end" }}
             />
           )}
         </div>

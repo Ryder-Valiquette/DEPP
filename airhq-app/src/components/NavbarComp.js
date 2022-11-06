@@ -14,7 +14,6 @@ export default class NavbarComp extends Component {
       <div>
         <Navbar bg="myColor">
         <Container>
-          
           <Navbar.Brand href="/">
             <img src={"favicon.ico"} width="50" />
             AirHQ
@@ -32,8 +31,8 @@ export default class NavbarComp extends Component {
                 About Us
                 </Link>
             </Nav.Link>
-            <GoogleLoginComp />
           </Nav>
+          <GoogleLoginComp />
         </Container>
       </Navbar>
       <br />
