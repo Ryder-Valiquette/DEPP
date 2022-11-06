@@ -1,7 +1,3 @@
-const Search = () => {
-    return <div>Hello world!</div>
-}
-
 const SearchBar = () => (
     <form action="/" method="get">
         <label htmlFor="header-search">
