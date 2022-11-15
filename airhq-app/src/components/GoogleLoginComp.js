@@ -1,76 +1,53 @@
-/* https://www.freakyjolly.com/google-signin-login-button-in-react-js-example-using-react-google_login-package/ */
+/* https://stackoverflow.com/questions/72209749/react-google-identity-services */
 
-import React, { Component } from "react";
-import { GoogleLogin, GoogleLogout } from "react-google-login";
+import { useEffect, useRef } from 'react'
 
-const CLIENT_ID =
-  "999742673703-kinnh6ssumkv134cpfc58r4ev9oooqd2.apps.googleusercontent.com";
+  const loadScript = (src) =>
+  new Promise((resolve, reject) => {
+    if (document.querySelector(`script[src="${src}"]`)) return resolve()
+    const script = document.createElement('script')
+    script.src = src
+    script.onload = () => resolve()
+    script.onerror = (err) => reject(err)
+    document.body.appendChild(script)
+  })
 
-class GoogleLoginComp extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isLoggedIn: false,
-      userInfo: {
-        name: "",
-        emailId: "",
-      },
-    };
+const GoogleLoginComp = () => {
+
+  const googleButton = useRef(null);
+
+  useEffect(() => {
+    const src = 'https://accounts.google.com/gsi/client'
+    const id = "1056099097195-99dd51cblkcjtbo6k91h01g7c5lu2lnb.apps.googleusercontent.com"
+
+    loadScript(src)
+      .then(() => {
+        /*global google*/
+        console.log(google)
+        google.accounts.id.initialize({
+          client_id: id,
+          callback: handleCredentialResponse,
+        })
+        google.accounts.id.renderButton(
+          googleButton.current, 
+          { theme: 'outline', size: 'large' } 
+        )
+      })
+      .catch(console.error)
+
+    return () => {
+      const scriptTag = document.querySelector(`script[src="${src}"]`)
+      if (scriptTag) document.body.removeChild(scriptTag)
+    }
+  }, [])
+
+  function handleCredentialResponse(response) {
+    console.log("Encoded JWT ID token: " + response.credential);
   }
 
-  // Success Handler
-  responseGoogleSuccess = (response) => {
-    console.log();
-    let userInfo = {
-      name: response.profileObj.name,
-      emailId: response.profileObj.email,
-    };
-    this.setState({ userInfo, isLoggedIn: true });
-  };
-
-  // Error Handler
-  responseGoogleError = (response) => {
-    console.log(response);
-  };
-
-  // Logout Session and Update State
-  logout = (response) => {
-    console.log(response);
-    let userInfo = {
-      name: "",
-      emailId: "",
-    };
-    this.setState({ userInfo, isLoggedIn: false });
-  };
-
-  render() {
-    return (
-      <div className="row mt-5">
-        <div className="col-md-12">
-          {this.state.isLoggedIn ? (
-            <div>
-              <h1>Welcome, {this.state.userInfo.name}</h1>
-
-              <GoogleLogout
-                clientId={CLIENT_ID}
-                buttonText={"Logout"}
-                onLogoutSuccess={this.logout}
-              ></GoogleLogout>
-            </div>
-          ) : (
-            <GoogleLogin
-              clientId={CLIENT_ID}
-              buttonText="Sign In with Google"
-              onSuccess={this.responseGoogleSuccess}
-              onFailure={this.responseGoogleError}
-              isSignedIn={true}
-              cookiePolicy={"single_host_origin"}
-              style = {{ alignItems: "end" }}
-            />
-          )}
-        </div>
-      </div>
-    );
-  }
+  return (
+    <div ref={googleButton}></div>
+  )
 }
-export default GoogleLoginComp;
+
+export default GoogleLoginComp

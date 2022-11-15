@@ -32,7 +32,7 @@ export default class NavbarComp extends Component {
                 </Link>
             </Nav.Link>
           </Nav>
-          <GoogleLoginComp />
+          <GoogleLoginComp/>
         </Container>
       </Navbar>
       <br />
