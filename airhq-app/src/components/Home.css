@@ -5,3 +5,14 @@ h1 {
     text-align: center;
     /* font-family: 'Muli', sans-serif; */
 }
+
+.hp
+{
+    background-color:lightgrey;
+}
+
+.weather
+{
+    position: relative;
+    top: 39px;
+}

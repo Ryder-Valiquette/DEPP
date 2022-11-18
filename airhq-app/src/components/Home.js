@@ -6,6 +6,7 @@
     EPA color chart
 */
 
+
 import React, { Component } from 'react';
 // import { Button, Alert, Breadcrumb, BreadcrumbItem, Card, Nav, Navbar, Container } from "react-bootstrap"
 import SearchBar from './Search';
@@ -20,6 +21,8 @@ export default class Home extends Component {
 
         <SearchBar />
         
+        <div className='weather'><iframe src="https://iot.app.initialstate.com/#/tiles/bkt_2jn698la77v3ph" height="500px" width= "800px" align= "right"></iframe></div>
+
 
         <h2>[Major City AQI left-hand side]</h2>
 
