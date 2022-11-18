@@ -17,7 +17,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className='hp'>
-        <h1>Home Page</h1>
+        <h1>Welcome to AirHQ!</h1>
 
         <SearchBar />
         
