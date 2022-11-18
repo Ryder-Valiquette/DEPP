@@ -7,6 +7,8 @@ export default class About extends Component {
     return (
       <div>
         <h1>About Us</h1>
+        <p> AirHQ was developed by Vincent Cardone, Andie Pearce, Ryder Valiquette, and Jackson Berbette</p>
+        
       </div>
     )
   }
