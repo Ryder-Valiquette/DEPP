@@ -2,6 +2,7 @@ import "../components/NavbarComp.css";
 import React, { Component } from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import GoogleLoginComp from "./GoogleLoginComp.js";
+import { GoogleLogin, googleLogout } from '@react-oauth/google';
 
 import {
     BrowserRouter as Router,
@@ -32,7 +33,14 @@ export default class NavbarComp extends Component {
                 </Link>
             </Nav.Link>
           </Nav>
-          <GoogleLoginComp/>
+          <GoogleLogin
+            onSuccess={credentialResponse => {
+            console.log(credentialResponse);
+            }}
+            onError={() => {
+            console.log('Login Failed');
+            }}
+            />
         </Container>
       </Navbar>
       <br />
