@@ -3,12 +3,25 @@ import React, { Component } from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import GoogleLoginComp from "./GoogleLoginComp.js";
 import { GoogleLogin, googleLogout } from '@react-oauth/google';
+import { authentication } from "../firebase-config";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
 
 import {
     BrowserRouter as Router,
     Link
   } from "react-router-dom";
 
+const signInWithGoogle = ()=>{
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(authentication, provider)
+  .then((re)=>{
+    console.log(re);
+  })
+  .catch((err)=>{
+    console.log(err);
+  })
+}
 export default class NavbarComp extends Component {
   render() {
     return (
@@ -34,13 +47,16 @@ export default class NavbarComp extends Component {
             </Nav.Link>
           </Nav>
           <GoogleLogin
-            onSuccess={credentialResponse => {
-            console.log(credentialResponse);
-            }}
-            onError={() => {
-            console.log('Login Failed');
-            }}
+            // onSuccess={credentialResponse => {
+            // console.log(credentialResponse);
+            // }}
+            // onError={() => {
+            // console.log('Login Failed');
+            // }}
             />
+          <Button onClick={signInWithGoogle}>
+              Sign in with Google
+          </Button>
         </Container>
       </Navbar>
       <br />
