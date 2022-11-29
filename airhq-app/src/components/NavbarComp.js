@@ -1,8 +1,6 @@
 import "../components/NavbarComp.css";
 import React, { Component } from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
-import GoogleLoginComp from "./GoogleLoginComp.js";
-import { GoogleLogin, googleLogout } from '@react-oauth/google';
 import { authentication } from "../firebase-config";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
@@ -46,14 +44,6 @@ export default class NavbarComp extends Component {
                 </Link>
             </Nav.Link>
           </Nav>
-          <GoogleLogin
-            // onSuccess={credentialResponse => {
-            // console.log(credentialResponse);
-            // }}
-            // onError={() => {
-            // console.log('Login Failed');
-            // }}
-            />
           <Button onClick={signInWithGoogle}>
               Sign in with Google
           </Button>

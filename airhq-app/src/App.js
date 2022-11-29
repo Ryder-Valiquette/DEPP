@@ -10,8 +10,6 @@ import About from './components/About';
 import Education from './components/Education';
 import Home from './components/Home';
 import { Container } from "react-bootstrap";
-import GoogleLoginComp from "./components/GoogleLoginComp";
-import { GoogleOAuthProvider } from '@react-oauth/google';
 
 function App() {
   return (
