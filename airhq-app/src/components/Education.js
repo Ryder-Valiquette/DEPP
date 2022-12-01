@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Dropdown } from 'react-bootstrap'
 import DropdownButton from 'react-bootstrap/DropdownButton';
-
+import './Education.css';
 
 import AQHeart from "../assets/AQHeart.png";
 import AQRange from "../assets/AQRange.png";
@@ -101,15 +101,21 @@ export default class Education extends Component {
     
   }
     return (
+
       <div className="App container">
+        <img id = "heart" src={AQHeart}  alt="Air Quality Index" height="800" width="500" />
+
         <h1>Educational Resources</h1> <br></br>
         <h3>General Air Quality Information</h3> 
+        <div className='genlinks'>
         <a href="https://www.airnow.gov/friday-resources/">EPA Air Quality Educational Resources</a> <br></br>
         <a href="https://www.who.int/health-topics/air-pollution#tab=tab_1">General Info on Air Pollution</a> <br></br> <br></br>
+        </div>
 
         <h4>Learn More!</h4>
+        <div className='dropdown'>
         <DropdownButton
-        alignRight
+        alightCenter
         title="Select a Topic"
         id="dropdown"
         onSelect={handleSelect}
@@ -118,9 +124,11 @@ export default class Education extends Component {
                 <Dropdown.Item eventKey="option-2">Community</Dropdown.Item>
                 <Dropdown.Item eventKey="option-3">Health</Dropdown.Item>
         </DropdownButton>
+        </div>
         <br></br>
 
-        <h3 id="Common Pollutant Information"></h3>
+        <div className='links'>
+        <h4 id="Common Pollutant Information"></h4>
         <a id="ozone" href="https://www.epa.gov/ozone-pollution"></a> 
         <a id="pm" href="https://www.epa.gov/pm-pollution"></a>
         <a id="co" href="https://www.epa.gov/co-pollution"></a>
@@ -131,7 +139,7 @@ export default class Education extends Component {
         <a id="sulfur" href="https://www.epa.gov/so2-pollution"></a>
         <a id="voc" href="https://www.epa.gov/indoor-air-quality-iaq/volatile-organic-compounds-impact-indoor-air-quality"></a>
 
-        <h3 id="Community"></h3>
+        <h4 id="Community"></h4>
         <a id="schools" href="https://www.epa.gov/iaq-schools/take-action-improve-indoor-air-quality-schools "></a>
         <a id="communities" href="https://www.niehs.nih.gov/research/programs/geh/geh_newsletter/2016/4/spotlight/poor_communities_exposed_to_elevated_air_pollution_levels.cfm"></a>
         <a id="disparities" href="https://www.lung.org/clean-air/outdoors/who-is-at-risk/disparities"></a>
@@ -139,16 +147,16 @@ export default class Education extends Component {
         <a id="you" href="https://www.pca.state.mn.us/news-and-stories/what-you-can-do-about-air-pollution"></a>
 
         
-        <h3 id="Health"></h3>
+        <h4 id="Health"></h4>
         <a id="Exposure" href="https://www.who.int/teams/environment-climate-change-and-health/air-quality-and-health/health-impacts/exposure-air-pollution"></a>
         <a id="Indoor" href="https://www.epa.gov/indoor-air-quality-iaq"></a>
         <a id="Indoorold" href="https://www.epa.gov/indoor-air-quality-iaq/indoor-air-quality-older-adults"></a>
         <a id="Indoorchild" href="https://www.epa.gov/indoor-air-quality-iaq/indoor-air-quality-children"></a>
         <a id="research" href="https://www.epa.gov/air-research/research-health-effects-air-pollution"></a>
         <a id="10" href="https://www.lung.org/blog/air-pollutions-top-10-health-risks"></a>
+        </div>
 
-        <img src={AQRange} alt="Air Quality Index" height="500" width="800" />
-        <img src={AQHeart} alt="Air Quality Index" height="800" width="500" />
+        <img id ="range" src={AQRange}  alt="Air Quality Index" height="500" width="750" />
 
         
       </div>
