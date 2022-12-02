@@ -7,11 +7,11 @@ from ISStreamer.Streamer import Streamer
 
 # --------- User Settings ---------
 LATITUDE = "29.6516"
-LONGITUDE = "82.3248"
+LONGITUDE = "-82.3248"
 AIRVISUAL_API_KEY = "336ad139-4648-4bb0-a238-dc75003ddc09"
-BUCKET_NAME = "new stream bucket"
-BUCKET_KEY = "PE8CHWNVVX55"
-ACCESS_KEY = "ist_ehfPB96gCW6DDavdaK18tXoGQIe5JKra"
+BUCKET_NAME = "Gainesville"
+BUCKET_KEY = "TVYL7NKSCK33"
+ACCESS_KEY = "ist_4IshdKuJrE9Enki9hEhE87faJs_ZoaOp"
 MINUTES_BETWEEN_READS = 5
 # ---------------------------------
 
