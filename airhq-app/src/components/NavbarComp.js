@@ -2,7 +2,8 @@ import "../components/NavbarComp.css";
 import React, { Component } from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import { authentication } from "../firebase-config";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import GoogleButton from 'react-google-button';
 
 
 import {
@@ -10,17 +11,33 @@ import {
     Link
   } from "react-router-dom";
 
+var i = 0;
+
 const signInWithGoogle = ()=>{
   const provider = new GoogleAuthProvider();
   signInWithPopup(authentication, provider)
   .then((re)=>{
     console.log(re);
-    document.getElementById("button").innerHTML = "Signed in";
+    console.log("Signed in");
+    document.getElementById("Google").style.display = "none";
   })
   .catch((err)=>{
     console.log(err);
   })
 }
+const logOut = ()=>{
+  signOut(authentication)
+  .then((re)=>{
+    console.log("Signed out");
+    document.getElementById("Google").style.display = "inline";
+
+  })
+  .catch((err)=>{
+    console.log(err);
+  })
+}
+
+
 export default class NavbarComp extends Component {
   render() {
     return (
@@ -45,11 +62,10 @@ export default class NavbarComp extends Component {
                 </Link>
             </Nav.Link>
           </Nav>
-          
-          <Button onClick={signInWithGoogle}>
-               <h5 id="button">Sign in with Google</h5>
+          <GoogleButton id = "Google" onClick={signInWithGoogle}/>
+          <Button onClick={logOut}>
+            Sign Out
           </Button>
-          
         </Container>
       </Navbar>
       <br />
