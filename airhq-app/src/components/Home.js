@@ -20,8 +20,8 @@ export default class Home extends Component {
         <h1>Welcome to AirHQ!</h1>
 
         <SearchBar />
-        
-        <div className='weather'><iframe src="https://iot.app.initialstate.com/#/tiles/bkt_2jn698la77v3ph" height="500px" width= "800px" align= "right"></iframe></div>
+
+        <div className='weather'><iframe src="https://iot.app.initialstate.com/embed/#/tiles/bkt_ui18lb6x50tb" height="500px" width= "800px" align= "right"></iframe></div>
 
 
         <h2>[Major City AQI left-hand side]</h2>
