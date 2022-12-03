@@ -1,3 +1,7 @@
 .bg-myColor {
     background-color: rgb(171, 197, 245);
 }
+
+#signout {
+    display: none;
+  }
