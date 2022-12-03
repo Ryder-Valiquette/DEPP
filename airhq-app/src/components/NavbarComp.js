@@ -20,6 +20,8 @@ const signInWithGoogle = ()=>{
     console.log(re);
     console.log("Signed in");
     document.getElementById("Google").style.display = "none";
+    document.getElementById("signout").style.display = "inline";
+
   })
   .catch((err)=>{
     console.log(err);
@@ -30,6 +32,7 @@ const logOut = ()=>{
   .then((re)=>{
     console.log("Signed out");
     document.getElementById("Google").style.display = "inline";
+    document.getElementById("signout").style.display = "none";
 
   })
   .catch((err)=>{
@@ -62,8 +65,9 @@ export default class NavbarComp extends Component {
                 </Link>
             </Nav.Link>
           </Nav>
-          <GoogleButton id = "Google" onClick={signInWithGoogle}/>
-          <Button onClick={logOut}>
+          <GoogleButton id = "Google"  onClick={signInWithGoogle}/>
+          
+          <Button id="signout" onClick={logOut}>
             Sign Out
           </Button>
         </Container>
