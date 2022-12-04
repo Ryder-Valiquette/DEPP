@@ -13,6 +13,8 @@ import {
 
 let i = 0;
 
+{/* This is Sign in with Google code from site*/}
+
 const signInWithGoogle = ()=>{
   const provider = new GoogleAuthProvider();
   signInWithPopup(authentication, provider)
@@ -48,23 +50,27 @@ export default class NavbarComp extends Component {
         <Navbar bg="myColor">
         <Container>
           <Navbar.Brand href="/">
+            {/*Adding the AirHQ logo to be the 'return home' button in navigation bar*/}
             <img src={"favicon.ico"} width="50" />
             AirHQ
           </Navbar.Brand>
           <Nav className="ms-auto">
             <Nav.Link>
                 {' '}
+                {/*Education Tab */}
                 <Link href="#education" className="text-decoration-none text-black" to="/education">
                 Educational Resources
                 </Link>
             </Nav.Link>
             <Nav.Link>
                 {' '}
+                {/* About tab */}
                 <Link href="#about" className="text-decoration-none text-black" to="/about">
                 About Us
                 </Link>
             </Nav.Link>
           </Nav>
+          {/* Google login */}
           <GoogleButton id = "Google"  onClick={signInWithGoogle}/>
           
           <Button id="signout" onClick={logOut}>
