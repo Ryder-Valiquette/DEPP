@@ -5,8 +5,8 @@ import './Education.css';
 
 import AQHeart from "../assets/AQHeart.png";
 import AQRange from "../assets/AQRange.png";
-var value = "";
-var i = 0;
+let value = "";
+let i = 0;
 export default class Education extends Component {
   render() {
   function handleSelect(e){
