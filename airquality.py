@@ -15,7 +15,7 @@ ACCESS_KEY = "ist_4IshdKuJrE9Enki9hEhE87faJs_ZoaOp"
 MINUTES_BETWEEN_READS = 5
 # ---------------------------------
 
-def isFloat(string):
+def is_Float(string):
     try:
         float(string)
         return True
@@ -26,7 +26,7 @@ def get_current_conditions():
         api_conditions_url = "https://api.airvisual.com/v2/nearest_city?lat=" + LATITUDE + "&lon=" + LONGITUDE + "&key=" + AIRVISUAL_API_KEY
         try:
                 f = urllib.request.urlopen(api_conditions_url)
-        except:
+        except BaseException:
                 return []
         json_currently = f.read()
         f.close()
