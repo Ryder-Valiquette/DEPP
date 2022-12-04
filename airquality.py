@@ -26,7 +26,7 @@ def get_current_conditions():
         api_conditions_url = "https://api.airvisual.com/v2/nearest_city?lat=" + LATITUDE + "&lon=" + LONGITUDE + "&key=" + AIRVISUAL_API_KEY
         try:
                 f = urllib.request.urlopen(api_conditions_url)
-        except BaseException as e:
+        except:
                 return []
         json_currently = f.read()
         f.close()
