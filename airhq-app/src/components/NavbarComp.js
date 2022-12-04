@@ -11,32 +11,39 @@ import {
     Link
   } from "react-router-dom";
 
-let i = 0;
-
 {/* This is Sign in with Google code from site*/}
 
+//Sign in with Google code
 const signInWithGoogle = ()=>{
   const provider = new GoogleAuthProvider();
   signInWithPopup(authentication, provider)
   .then((re)=>{
     console.log(re);
     console.log("Signed in");
+    //Makes google button disappear when signed in
     document.getElementById("Google").style.display = "none";
+    //Makes sign out button appear when signed in
     document.getElementById("signout").style.display = "inline";
 
   })
+  //catches error if problem signing in
   .catch((err)=>{
     console.log(err);
   })
 }
+
+//Sign out code
 const logOut = ()=>{
   signOut(authentication)
   .then((re)=>{
     console.log("Signed out");
+    //Makes google button appear when signed out
     document.getElementById("Google").style.display = "inline";
+    //Makes sign out button disappear when signed out
     document.getElementById("signout").style.display = "none";
 
   })
+  //catches error if problem signing out
   .catch((err)=>{
     console.log(err);
   })
@@ -81,6 +88,7 @@ export default class NavbarComp extends Component {
           
           <GoogleButton id = "Google"  onClick={signInWithGoogle}/>
           
+          {/* Sign out button */}
           <Button id="signout" onClick={logOut}>
             Sign Out
           </Button>
