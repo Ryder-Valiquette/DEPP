@@ -11,7 +11,7 @@ import {
     Link
   } from "react-router-dom";
 
-var i = 0;
+let i = 0;
 
 const signInWithGoogle = ()=>{
   const provider = new GoogleAuthProvider();
