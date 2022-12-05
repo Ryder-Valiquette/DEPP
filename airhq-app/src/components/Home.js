@@ -31,7 +31,7 @@ export default class Home extends Component {
             
             {/* This is the main API window*/}
 
-            <div className='weather'><iframe src="https://iot.app.initialstate.com/embed/#/tiles/bkt_ui18lb6x50tb" height="400px" width= "500px" align= "right"></iframe></div>
+            <div className='weather'><iframe src="https://iot.app.initialstate.com/embed/#/tiles/bkt_ui18lb6x50tb" height="900px" width= "500px" align= "right"></iframe></div>
           </div>
           <div className="col" style={{paddingTop: 35 }}>
 
