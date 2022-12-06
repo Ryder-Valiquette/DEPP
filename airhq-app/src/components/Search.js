@@ -1,5 +1,8 @@
 const SearchBar = () => (
     <div 
+
+        /* Sets Search Bar in middle top of homepage*/
+
         style={{ 
             display: 'flex',
             alignItems: 'center',
@@ -14,6 +17,9 @@ const SearchBar = () => (
         <input
             type="text"
             id="header-search"
+
+            /* Temporary test to be displayed in search bar to user*/
+
             placeholder="City, State or Zip"
             name="s"
         />
